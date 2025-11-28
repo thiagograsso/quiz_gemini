@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes da Pergunta</title>
+</head>
+<body>
+
+<h1>Detalhes</h1>
+
+<p><strong>ID:</strong> <span th:text="${question.id}"></span></p>
+
+<p><strong>Pergunta:</strong><br>
+    <span th:text="${question.pergunta}"></span></p>
+
+<p><strong>Resposta:</strong><br>
+    <span th:text="${question.resposta}"></span></p>
+
+<p><strong>Explicação:</strong><br>
+    <span th:text="${question.explicacao}"></span></p>
+
+<br>
+<a href="/">Voltar</a>
+
+</body>
+</html>

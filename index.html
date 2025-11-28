@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz - Lista de Perguntas</title>
+</head>
+<body>
+<h1>Banco de Perguntas</h1>
+
+<a href="/criar"><button>Criar pergunta manualmente</button></a>
+<br><br>
+
+<form action="/gerar" method="post">
+    <input type="text" name="tema" placeholder="Tema para IA" required>
+    <button type="submit">Gerar pela IA</button>
+</form>
+
+<hr>
+
+<h2>Perguntas cadastradas</h2>
+
+<table border="1" cellpadding="6">
+    <tr>
+        <th>ID</th>
+        <th>Pergunta</th>
+        <th>Resposta</th>
+        <th>Ações</th>
+    </tr>
+
+    <tr th:each="q : ${questions}">
+        <td th:text="${q.id}"></td>
+        <td th:text="${q.pergunta}"></td>
+        <td th:text="${q.resposta}"></td>
+        <td>
+            <a th:href="@{|/detalhes/${q.id}|}">Detalhes</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

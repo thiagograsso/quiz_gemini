@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Pergunta</title>
+</head>
+<body>
+
+<h1>Criar Pergunta</h1>
+
+<form action="/criar" method="post" th:object="${question}">
+    <label>Enunciado:</label><br>
+    <input type="text" th:field="*{enunciado}" required><br><br>
+
+    <label>Resposta Correta:</label><br>
+    <input type="text" th:field="*{respostaCorreta}" required><br><br>
+
+    <label>Explicação:</label><br>
+    <textarea th:field="*{explicacao}"></textarea><br><br>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<br>
+<a href="/">Voltar</a>
+
+</body>
+</html>
